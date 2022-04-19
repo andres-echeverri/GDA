@@ -1,0 +1,64 @@
+<div *ngIf="!sentForm">
+
+    <!--Formulario con problema de CORS -->
+    <!-- <form [formGroup]="form" (ngSubmit)="OnSubmit()" class="form">
+        <div class="form-body">
+            <input type="text" class="inputs" placeholder="Nombre" formControlName="name">
+            <input type="text" class="inputs" placeholder="Apellido" formControlName="last_name">
+            <input type="number" class="inputs" placeholder="Telefono" formControlName="phone">
+            <input type="email" class="inputs" placeholder="Correo electrónico" formControlName="email">
+            <textarea class="inputs" rows="5" placeholder="Solicitud/requerimiento" formControlName="requirement"></textarea>
+        </div>
+    
+        <div class="form-button">
+            <button 
+                [disabled]="form.invalid" 
+                type="submit" 
+                [ngClass]="form.invalid? 'form-button-disabled' : 'form-button-active' ">
+                Registrar
+            </button>
+        </div>
+    </form> -->
+
+    <!-- Formulario embebido -->
+    <form  class="form" method="post"
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfNE6Vst7ediQRz6d2UZb710oWRRQKUG7mmIjhRk4f-velknQ/formResponse">
+        <div class="form-body">
+            <input  type="text" 
+                    class="inputs" 
+                    placeholder="Nombre" 
+                    name="entry.577865998"
+            >
+            <input  type="text" 
+                    class="inputs" 
+                    placeholder="Apellido" 
+                    name="entry.786756805"
+            >
+            <input  type="number" 
+                    class="inputs" 
+                    placeholder="Telefono" 
+                    name="entry.1531543906"
+            >
+            <input  type="email" 
+                    class="inputs" 
+                    placeholder="Correo electrónico" 
+                    name="entry.1526945379"
+            >
+            <textarea   class="inputs" 
+                        rows="5" 
+                        placeholder="Solicitud/requerimiento" 
+                        name="entry.896289209"
+            ></textarea>
+        </div>
+        <div class="form-button">
+            <button type="submit"> Registrar</button>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="sentForm" class="form__send">
+    <h4>Formulario enviado</h4>
+    <div class="form-button">
+        <button type="button" (click)="sendOther()">Enviar otro</button>
+    </div>
+</div>

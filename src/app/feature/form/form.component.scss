@@ -1,0 +1,62 @@
+.form {
+    padding: 15px;
+    &-body {
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0px 1px 5px grey;
+            resize: none;
+        }
+    }
+    &-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-disabled{
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        &-active{
+            opacity: 1;
+            cursor: pointer;
+        }
+        button {
+            color: black;
+            font-weight: bold;
+            background: white;
+            border: none;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px darkgrey;
+            width: 100px;
+        }
+        button:active {
+            box-shadow: inset 0px 0px 5px darkgrey;
+        }
+    }
+    &__send{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 577px) {
+    .form {
+        padding: 0;
+        &-body {
+            .inputs {
+                margin: 15px auto;
+            }
+        }
+    }
+}
